@@ -21,16 +21,26 @@ public class HomePage extends BasePage {
     @AndroidFindBy( xpath = "//android.widget.TextView[@text='SMS Messaging']")
     private AndroidElement smsMessagingOption;
 
+    @AndroidFindBy( xpath = "//android.widget.TextView[@text='Preference']")
+    private AndroidElement preferenceMenu;
+
     public void clickOnOsMenu(){
 
-        isElementVisible(this.osMenu, 4);
+        isElementVisible(this.osMenu, 8);
         this.osMenu.click();;
     }
 
     public void clickOnSmsOption(){
 
-        isElementVisible(this.osMenu, 4);
+        isElementVisible(this.osMenu, 8);
         this.smsMessagingOption.click();
+
+    }
+
+    public void clickOnPreference(){
+
+        isElementVisible(this.preferenceMenu, 8);
+        this.preferenceMenu.click();
 
     }
 }

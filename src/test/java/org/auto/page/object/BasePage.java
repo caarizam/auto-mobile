@@ -17,6 +17,10 @@ public class BasePage {
         this.driver = driver;
     }
 
+    protected final int SHORT_TIME_WAIT = 3;
+    protected final int MID_TIME_WAIT = 5;
+    protected final int LONG_TIME_WAIT = 8;
+
     public boolean isElementVisible(AndroidElement androidElement, int timeOut){
         try{
             wait = new WebDriverWait(this.driver, timeOut);
