@@ -102,18 +102,14 @@ public class Common {
 
     public void setDriver(AndroidDriver<AndroidElement> driver) {
 
-        System.out.println("setDriver");
         if(this.driver == null){
-            System.out.println("driver is null");
             this.driver = driver;
         }
     }
 
     public Configurations getConfigurations(String deviceName, String urlAppium) {
 
-        System.out.println("getConfigurations");
         if(configurations == null){
-            System.out.println("Configurations is null");
             configurations = new Configurations(deviceName, urlAppium);
             this.driver = configurations.getDriver();
         }

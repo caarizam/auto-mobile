@@ -3,6 +3,7 @@ package org.auto.steps.definition;
 import cucumber.api.PendingException;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Then;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import org.auto.common.Common;
@@ -17,7 +18,11 @@ public class RemoveSteps {
     HomePage homePage;
 
     public void RemoveSteps(){
-        System.out.println("Constructor RemoveSteps");
+
+    }
+
+    @Before
+    public void initValues(){
         Configurations config = Common.getInstance().getConfigurations("emulator-554", "http://127.0.0.1:4723/wd/hub");
         this.driver = Common.getInstance().getDriver();
         homePage = new HomePage(this.driver);
@@ -26,7 +31,6 @@ public class RemoveSteps {
     @And("^the user search and delete the note with name \"([^\"]*)\" and reminder switch to \"([^\"]*)\"$")
     public void theUserSearchAndDeleteTheNoteWithNameAndReminderSwitchTo(String nameToDo, boolean switchReminder) {
 
-        System.out.println("Step And the user search and delete " + nameToDo);
         AndroidElement elementToRemove = homePage.getListToDosElement(nameToDo, switchReminder);
 
         if(elementToRemove != null){
@@ -40,4 +44,5 @@ public class RemoveSteps {
         }
 
     }
+
 }

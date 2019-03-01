@@ -2,6 +2,7 @@ package org.auto.steps.definition;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -11,7 +12,6 @@ import org.auto.common.Common;
 import org.auto.page.object.AddToDoPage;
 import org.auto.page.object.HomePage;
 import org.auto.setup.Configurations;
-import org.auto.setup.Hooks;
 import org.junit.Assert;
 
 public class AddNotesSteps {
@@ -22,7 +22,10 @@ public class AddNotesSteps {
 
     public AddNotesSteps(){
 
-        System.out.println("Constructor AddNotesSteps");
+    }
+
+    @Before
+    public void initValues(){
         Configurations config = Common.getInstance().getConfigurations("emulator-554", "http://127.0.0.1:4723/wd/hub");
         this.driver = Common.getInstance().getDriver();
         homePage = new HomePage(this.driver);
@@ -32,7 +35,6 @@ public class AddNotesSteps {
 
     @Given("^the access to the application$")
     public void theAccessToTheApplication() {
-        System.out.println("Step Given the access");
         this.driver.launchApp();
         Common.getInstance().takeScreenShot();
 
@@ -40,7 +42,6 @@ public class AddNotesSteps {
 
     @When("^a user add the note with title \"([^\"]*)\" and reminder switch to \"([^\"]*)\"$")
     public void aUserAddTheNoteWithAndSwitch(String nameToDo, boolean switchReminder) {
-        System.out.println("Step When user add the note");
         homePage.clickOnAddButton();
         addPage.addSimpleToDo(nameToDo, switchReminder);
 
@@ -48,7 +49,6 @@ public class AddNotesSteps {
 
     @Then("^the user \"([^\"]*)\" see that \"([^\"]*)\" with reminder set to \"([^\"]*)\" in the home page list$")
     public void theUserCanSeeThatWithReminderSetToInTheHomePageList(String isVisible, String nameToDo, boolean dateTime) {
-        System.out.println("Step Then the user " + isVisible + " the value " + nameToDo);
         boolean expected = Common.getInstance().getExpected(isVisible);
         boolean checkItem = homePage.getListToDos(nameToDo, dateTime);
 

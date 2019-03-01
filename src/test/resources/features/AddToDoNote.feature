@@ -19,7 +19,6 @@ Feature: Add singles notes
     And the user "can" see that "<name>" with reminder set to "<flagReminder>" in the home page list
     And the user search and delete the note with name "<name>" and reminder switch to "<flagReminder>"
     Then the user "cannot" see that "<name>" with reminder set to "<flagReminder>" in the home page list
-    Then testing
 
     Examples: data to add and remove
       | name                     | flagReminder |

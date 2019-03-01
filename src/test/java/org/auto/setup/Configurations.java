@@ -30,7 +30,6 @@ public class Configurations {
     public AndroidDriver getDriver() {
 
         try{
-            System.out.println(":::Configurations getDriver");
             desiredCapabilities = new DesiredCapabilities();
             desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,MobilePlatform.ANDROID);
             desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);

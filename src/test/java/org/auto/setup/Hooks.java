@@ -11,12 +11,10 @@ public class Hooks {
 
     @Before
     public void setUp(){
-        System.out.println("hooks before");
     }
 
     @After
     public void confirmation(Scenario scenario){
-        System.out.println("hooks after " + scenario.getName());
     }
 
 }
