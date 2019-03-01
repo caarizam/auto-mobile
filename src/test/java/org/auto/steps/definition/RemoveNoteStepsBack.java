@@ -1,19 +1,19 @@
 package org.auto.steps.definition;
 
-import io.appium.java_client.android.AndroidDriver;
+/*import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.qameta.allure.Step;
 import org.auto.page.object.AddToDoPage;
 import org.auto.page.object.HomePage;
 import org.junit.Assert;
+*/
+public class RemoveNoteStepsBack {
 
-public class RemoveNoteSteps {
-
-    AndroidDriver driver;
+    /*AndroidDriver driver;
     HomePage homePage;
     AddToDoPage addPage;
 
-    public RemoveNoteSteps(AndroidDriver driver){
+    public RemoveNoteStepsBack(AndroidDriver driver){
 
         this.driver = driver;
         homePage = new HomePage(this.driver);
@@ -37,6 +37,6 @@ public class RemoveNoteSteps {
 
 
 
-    }
+    }*/
 
 }

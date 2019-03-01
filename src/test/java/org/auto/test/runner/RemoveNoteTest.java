@@ -1,30 +1,30 @@
-package org.auto.tests;
+package org.auto.test.runner;
 
-import io.appium.java_client.android.AndroidDriver;
+/*import io.appium.java_client.android.AndroidDriver;
 import io.qameta.allure.*;
 import org.auto.common.Common;
 import org.auto.setup.Configurations;
-import org.auto.steps.definition.AddMinimalToDoSteps;
-import org.auto.steps.definition.RemoveNoteSteps;
+import org.auto.steps.definition.AddMinimalToDoStepsBack;
+import org.auto.steps.definition.RemoveNoteStepsBack;
 import org.junit.Before;
 import org.junit.Test;
 
 @Epic("Removing Notes")
-@Feature("Removing Notes")
+@Feature("Removing Notes")*/
 public class RemoveNoteTest {
 
-    Configurations config;
+    /*Configurations config;
     AndroidDriver driver;
-    AddMinimalToDoSteps addSteps;
-    RemoveNoteSteps removeSteps;
+    AddMinimalToDoStepsBack addSteps;
+    RemoveNoteStepsBack removeSteps;
 
     @Before
     public void setUp(){
         System.out.println("Before setUp");
         config = Common.getInstance().getConfigurations("emulator-554", "http://127.0.0.1:4723/wd/hub");
         this.driver = Common.getInstance().getDriver();
-        addSteps = new AddMinimalToDoSteps(this.driver);
-        removeSteps = new RemoveNoteSteps(this.driver);
+        addSteps = new AddMinimalToDoStepsBack(this.driver);
+        removeSteps = new RemoveNoteStepsBack(this.driver);
     }
 
     @Test
@@ -39,5 +39,5 @@ public class RemoveNoteTest {
         removeSteps.getAndRemoveNote("Old note-remove", true);
         config.closeDriver();
 
-    }
+    }*/
 }

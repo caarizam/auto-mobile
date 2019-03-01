@@ -1,26 +1,26 @@
-package org.auto.tests;
+package org.auto.test.runner;
 
-import io.appium.java_client.android.AndroidDriver;
+/*import io.appium.java_client.android.AndroidDriver;
 import io.qameta.allure.*;
 import org.auto.common.Common;
 import org.auto.setup.Configurations;
-import org.auto.steps.definition.AddMinimalToDoSteps;
+import org.auto.steps.definition.AddMinimalToDoStepsBack;
 import org.junit.*;
 
 @Epic("Adding Notes")
-@Feature("Adding Notes")
+@Feature("Adding Notes")*/
 public class AddMinimalToDoTest {
 
-    Configurations config;
+    /*Configurations config;
     AndroidDriver driver;
-    AddMinimalToDoSteps addSteps;
+    AddMinimalToDoStepsBack addSteps;
 
     @Before
     public void setUp(){
         System.out.println("Before setUp");
         config = Common.getInstance().getConfigurations("emulator-554", "http://127.0.0.1:4723/wd/hub");
         this.driver = Common.getInstance().getDriver();
-        addSteps = new AddMinimalToDoSteps(this.driver);
+        addSteps = new AddMinimalToDoStepsBack(this.driver);
     }
 
     @Test
@@ -49,6 +49,6 @@ public class AddMinimalToDoTest {
         addSteps.checkListToDos("Meeting on Monday with Kate", true);
         config.closeDriver();
 
-    }
+    }*/
 
 }

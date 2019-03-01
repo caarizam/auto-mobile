@@ -1,10 +1,11 @@
 package org.auto.common;
 
+import cucumber.api.Scenario;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
-import io.qameta.allure.Attachment;
 import org.auto.setup.Configurations;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 public class Common {
 
@@ -14,6 +15,7 @@ public class Common {
 
     private AndroidDriver<AndroidElement> driver = null;
     private Configurations configurations = null;
+    private Scenario tmpScenario;
 
 
     public static Common getInstance() {
@@ -27,14 +29,13 @@ public class Common {
      * This method allows to add an image as evidence
      * @return
      */
-    @Attachment(value = "Screenshot evidence", type = "image/jpg")
-    public byte[] takeScreenShot(){
+    public void takeScreenShot(){
         try{
-            byte[] screenShot = driver.getScreenshotAs(OutputType.BYTES);
-            return screenShot;
+            byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+            this.tmpScenario.embed(screenshot, "image/png");
 
         }catch (Exception ex){
-            return null;
+
         }
     }
 
@@ -43,9 +44,42 @@ public class Common {
      * @param message
      * @return
      */
-    @Attachment(value = "{0}", type = "text/plain")
-    public static String saveTextLog(String message){
-        return message;
+    public void saveTextLog(String message){
+        this.tmpScenario.write(message);
+    }
+
+    /**
+     * This method get the text sent from the feature file and return an expected value
+     * @param text String that could be can, cannot, will, will not
+     * @return boolean true = it's expected to see the value, false = it's not expected to see the value
+     */
+    public boolean getExpected(String text){
+
+        boolean expected = false;
+        switch (text){
+            case "can":
+                expected = true;
+                break;
+
+            case "cannot":
+                expected = false;
+                break;
+
+            case "will":
+                expected = true;
+                break;
+
+            case "will not":
+                expected = false;
+                break;
+
+            default:
+                expected = false;
+                break;
+        }
+
+        return expected;
+
     }
 
     /**
@@ -89,5 +123,13 @@ public class Common {
 
     public void setConfigurations(Configurations configurations) {
         this.configurations = configurations;
+    }
+
+    public Scenario getTmpScenario() {
+        return tmpScenario;
+    }
+
+    public void setTmpScenario(Scenario tmpScenario) {
+        this.tmpScenario = tmpScenario;
     }
 }

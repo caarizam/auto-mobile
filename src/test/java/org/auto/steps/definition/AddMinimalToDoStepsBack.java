@@ -1,20 +1,20 @@
 package org.auto.steps.definition;
 
 import io.appium.java_client.android.AndroidDriver;
-import io.qameta.allure.Step;
+//import io.qameta.allure.Step;
 import org.auto.common.Common;
 import org.auto.page.object.AddToDoPage;
 import org.auto.page.object.HomePage;
 import org.junit.Assert;
 
-public class AddMinimalToDoSteps {
+public class AddMinimalToDoStepsBack {
 
-    AndroidDriver driver;
+    /*AndroidDriver driver;
     HomePage homePage;
     AddToDoPage addPage;
 
 
-    public AddMinimalToDoSteps(AndroidDriver driver){
+    public AddMinimalToDoStepsBack(AndroidDriver driver){
 
         this.driver = driver;
         homePage = new HomePage(this.driver);
@@ -40,6 +40,6 @@ public class AddMinimalToDoSteps {
         boolean checkItem = homePage.getListToDos(nameToDo, dateTime);
         Assert.assertTrue("The item with value " + nameToDo + " was not found", checkItem);
 
-    }
+    }*/
 
 }

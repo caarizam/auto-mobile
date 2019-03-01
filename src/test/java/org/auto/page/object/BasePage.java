@@ -6,16 +6,12 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.touch.LongPressOptions;
 import org.junit.Assert;
-import org.junit.platform.suite.api.ExcludePackages;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static io.appium.java_client.touch.WaitOptions.waitOptions;
 import static io.appium.java_client.touch.offset.PointOption.point;
 import static java.time.Duration.ofMillis;
-import static java.time.Duration.ofSeconds;
 
 public class BasePage {
 
