@@ -20,7 +20,6 @@ public class RemoveNoteTest {
 
     @Before
     public void setUp(){
-        System.out.println("Before setUp");
         config = Common.getInstance().getConfigurations("emulator-554", "http://127.0.0.1:4723/wd/hub");
         this.driver = Common.getInstance().getDriver();
         addSteps = new AddMinimalToDoSteps(this.driver);

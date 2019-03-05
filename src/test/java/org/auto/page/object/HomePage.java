@@ -78,9 +78,6 @@ public class HomePage extends BasePage {
                 tmpItem = getItemFromList("todoListItemTimeTextView", listElementsLabel.get(i));
                 dateText = tmpItem != null ? tmpItem.getText() : "null";
 
-                System.out.println("nameText  :" + nameText);
-                System.out.println("dateText  :" + dateText);
-
                 if(nameText.equals(nameToDo)){
 
                     if(dateTime){

@@ -51,7 +51,6 @@ public class BasePage {
             isVisible = true;
 
         }catch (Exception ex){
-            System.out.println("Exception  :" + ex.getClass().toString());
             isVisible = false;
         }
 
