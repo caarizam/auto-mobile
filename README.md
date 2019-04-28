@@ -1,2 +1,2 @@
-# auto-mobile
+# auto-mobil
 Mobile automation with appium
