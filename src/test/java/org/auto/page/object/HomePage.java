@@ -44,7 +44,7 @@ public class HomePage extends BasePage {
      */
     public void clickOnAddButton(){
 
-        if(isElementVisible(this.addButton, LONG_TIME_WAIT, "Add ToDo button is no visible", true)){
+        if(isElementVisible(this.addButton, LONG_TIME_WAIT, "Add ToDo button is not visible", true)){
             this.addButton.click();
         }
 
@@ -64,7 +64,7 @@ public class HomePage extends BasePage {
         int size, i;
         boolean foundElement = false;
 
-        if(isElementVisible(this.appTitleLabel, LONG_TIME_WAIT, "App Title is no visible", true)){
+        if(isElementVisible(this.appTitleLabel, LONG_TIME_WAIT, "App Title is not visible", true)){
 
             Common.getInstance().takeScreenShot();
 
@@ -112,7 +112,7 @@ public class HomePage extends BasePage {
         String nameText, dateText;
         int size, i;
 
-        if(isElementVisible(this.appTitleLabel, LONG_TIME_WAIT, "App Title is no visible", true)){
+        if(isElementVisible(this.appTitleLabel, LONG_TIME_WAIT, "App Title is not visible", true)){
 
             Common.getInstance().takeScreenShot();
 

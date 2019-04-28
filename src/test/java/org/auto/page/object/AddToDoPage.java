@@ -59,7 +59,7 @@ public class AddToDoPage extends BasePage {
      */
     public void addSimpleToDo(String nameToDo, boolean switchReminder){
 
-        if(isElementVisible(titleLabel, LONG_TIME_WAIT, "Add button is no visisble", true)){
+        if(isElementVisible(titleLabel, LONG_TIME_WAIT, "Add button is not visible", true)){
             Common.getInstance().takeScreenShot();
             editTitle.click();
             editTitle.clear();
@@ -68,7 +68,7 @@ public class AddToDoPage extends BasePage {
 
             if(switchReminder){
                 remindMeSwitchButton.click();
-                isElementVisible(remindMeLabel, MID_TIME_WAIT, "Switch reminder is no visible", true);
+                isElementVisible(remindMeLabel, MID_TIME_WAIT, "Switch reminder is not visible", true);
             }
 
             Common.getInstance().takeScreenShot();
