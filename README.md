@@ -1,2 +1,2 @@
-# auto-mobil
-Mobile automation with appium
+# auto-mobile
+Mobile automation with appium - Allure example
