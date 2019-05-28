@@ -1,0 +1,397 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 13986690119,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AddNotesSteps.initValues()"
+            }
+          },
+          {
+            "result": {
+              "duration": 39070058,
+              "status": "passed"
+            },
+            "match": {
+              "location": "RemoveSteps.initValues()"
+            }
+          }
+        ],
+        "line": 12,
+        "name": "Add basic ToDo Note",
+        "description": "",
+        "id": "add-singles-notes;add-basic-todo-note;data-of-notes-to-add;2",
+        "after": [
+          {
+            "result": {
+              "duration": 47470,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AddNotesSteps.closeApp()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5876771022,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the access to the application",
+            "match": {
+              "location": "AddNotesSteps.theAccessToTheApplication()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 27792696352,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "a user add the note with title \"Basic note\" and reminder switch to \"false\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Basic note",
+                  "offset": 32
+                },
+                {
+                  "val": "false",
+                  "offset": 68
+                }
+              ],
+              "location": "AddNotesSteps.aUserAddTheNoteWithAndSwitch(String,boolean)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4912925334,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "the user \"can\" see that \"Basic note\" with reminder set to \"false\" in the home page list",
+            "match": {
+              "arguments": [
+                {
+                  "val": "can",
+                  "offset": 10
+                },
+                {
+                  "val": "Basic note",
+                  "offset": 25
+                },
+                {
+                  "val": "false",
+                  "offset": 59
+                }
+              ],
+              "location": "AddNotesSteps.theUserCanSeeThatWithReminderSetToInTheHomePageList(String,String,boolean)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@add-note"
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 39496429,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AddNotesSteps.initValues()"
+            }
+          },
+          {
+            "result": {
+              "duration": 19620346,
+              "status": "passed"
+            },
+            "match": {
+              "location": "RemoveSteps.initValues()"
+            }
+          }
+        ],
+        "line": 13,
+        "name": "Add basic ToDo Note",
+        "description": "",
+        "id": "add-singles-notes;add-basic-todo-note;data-of-notes-to-add;3",
+        "after": [
+          {
+            "result": {
+              "duration": 36350,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AddNotesSteps.closeApp()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 6371099901,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the access to the application",
+            "match": {
+              "location": "AddNotesSteps.theAccessToTheApplication()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 29169982269,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "a user add the note with title \"Note with date and time\" and reminder switch to \"true\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Note with date and time",
+                  "offset": 32
+                },
+                {
+                  "val": "true",
+                  "offset": 81
+                }
+              ],
+              "location": "AddNotesSteps.aUserAddTheNoteWithAndSwitch(String,boolean)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3747176413,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "the user \"can\" see that \"Note with date and time\" with reminder set to \"true\" in the home page list",
+            "match": {
+              "arguments": [
+                {
+                  "val": "can",
+                  "offset": 10
+                },
+                {
+                  "val": "Note with date and time",
+                  "offset": 25
+                },
+                {
+                  "val": "true",
+                  "offset": 72
+                }
+              ],
+              "location": "AddNotesSteps.theUserCanSeeThatWithReminderSetToInTheHomePageList(String,String,boolean)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@add-note"
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 31472781,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AddNotesSteps.initValues()"
+            }
+          },
+          {
+            "result": {
+              "duration": 20616780,
+              "status": "passed"
+            },
+            "match": {
+              "location": "RemoveSteps.initValues()"
+            }
+          }
+        ],
+        "line": 25,
+        "name": "Remove a ToDo Note added",
+        "description": "",
+        "id": "add-singles-notes;remove-a-todo-note-added;data-to-add-and-remove;2",
+        "after": [
+          {
+            "result": {
+              "duration": 36778,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AddNotesSteps.closeApp()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 6441533260,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "the access to the application",
+            "match": {
+              "location": "AddNotesSteps.theAccessToTheApplication()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 33437362776,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "a user add the note with title \"Reminder - go to the Gym\" and reminder switch to \"true\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Reminder - go to the Gym",
+                  "offset": 32
+                },
+                {
+                  "val": "true",
+                  "offset": 82
+                }
+              ],
+              "location": "AddNotesSteps.aUserAddTheNoteWithAndSwitch(String,boolean)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4707244205,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "the user \"can\" see that \"Reminder - go to the Gym\" with reminder set to \"true\" in the home page list",
+            "match": {
+              "arguments": [
+                {
+                  "val": "can",
+                  "offset": 10
+                },
+                {
+                  "val": "Reminder - go to the Gym",
+                  "offset": 25
+                },
+                {
+                  "val": "true",
+                  "offset": 73
+                }
+              ],
+              "location": "AddNotesSteps.theUserCanSeeThatWithReminderSetToInTheHomePageList(String,String,boolean)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 17909453210,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "the user search and delete the note with name \"Reminder - go to the Gym\" and reminder switch to \"true\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Reminder - go to the Gym",
+                  "offset": 47
+                },
+                {
+                  "val": "true",
+                  "offset": 97
+                }
+              ],
+              "location": "RemoveSteps.theUserSearchAndDeleteTheNoteWithNameAndReminderSwitchTo(String,boolean)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3086439172,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "the user \"cannot\" see that \"Reminder - go to the Gym\" with reminder set to \"true\" in the home page list",
+            "match": {
+              "arguments": [
+                {
+                  "val": "cannot",
+                  "offset": 10
+                },
+                {
+                  "val": "Reminder - go to the Gym",
+                  "offset": 28
+                },
+                {
+                  "val": "true",
+                  "offset": 76
+                }
+              ],
+              "location": "AddNotesSteps.theUserCanSeeThatWithReminderSetToInTheHomePageList(String,String,boolean)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@add-remove-note"
+          }
+        ]
+      }
+    ],
+    "name": "Add singles notes",
+    "description": "",
+    "id": "add-singles-notes",
+    "keyword": "Feature",
+    "uri": "src/test/resources/features/AddToDoNote.feature",
+    "tags": [
+      {
+        "name": "@regression",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

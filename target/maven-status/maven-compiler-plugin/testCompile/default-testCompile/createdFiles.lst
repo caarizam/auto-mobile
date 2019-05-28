@@ -1,0 +1,9 @@
+org\auto\page\object\AddToDoPage.class
+org\auto\test\runner\TestRunner.class
+org\auto\steps\definition\AddNotesSteps.class
+org\auto\setup\Configurations.class
+org\auto\steps\definition\RemoveSteps.class
+org\auto\page\object\HomePage.class
+org\auto\common\Common.class
+org\auto\setup\Hooks.class
+org\auto\page\object\BasePage.class
