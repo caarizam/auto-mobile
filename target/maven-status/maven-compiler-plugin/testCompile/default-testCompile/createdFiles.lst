@@ -1,0 +1,9 @@
+org\auto\page\object\AddToDoPage.class
+org\auto\setup\Configurations.class
+org\auto\page\object\HomePage.class
+org\auto\steps\definition\RemoveNoteSteps.class
+org\auto\common\Common.class
+org\auto\steps\definition\AddMinimalToDoSteps.class
+org\auto\tests\AddMinimalToDoTest.class
+org\auto\tests\RemoveNoteTest.class
+org\auto\page\object\BasePage.class

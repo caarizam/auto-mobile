@@ -1,0 +1,94 @@
+{
+  "statistic" : {
+    "failed" : 0,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 3,
+    "unknown" : 0,
+    "total" : 3
+  },
+  "time" : {
+    "minDuration" : 36455,
+    "maxDuration" : 56689,
+    "sumDuration" : 142165,
+    "start" : 1559007766064,
+    "stop" : 1559007909244,
+    "duration" : 143180
+  },
+  "children" : [ {
+    "uid" : "ce91023cf768c577",
+    "name" : "org.auto.tests.AddMinimalToDoTest",
+    "time" : {
+      "minDuration" : 36455,
+      "maxDuration" : 56689,
+      "sumDuration" : 93144,
+      "start" : 1559007766064,
+      "stop" : 1559007860202,
+      "duration" : 94138
+    },
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
+    },
+    "type" : "TestGroupNode",
+    "children" : [ {
+      "uid" : "d5bc3fe9a8918d4a",
+      "name" : "addSimpleToDoNote",
+      "time" : {
+        "start" : 1559007823747,
+        "stop" : 1559007860202,
+        "duration" : 36455
+      },
+      "status" : "passed",
+      "flaky" : false,
+      "type" : "TestCaseNode"
+    }, {
+      "uid" : "ad5d3c110d198182",
+      "name" : "addToDoNoteWithDefaultReminder",
+      "time" : {
+        "start" : 1559007766064,
+        "stop" : 1559007822753,
+        "duration" : 56689
+      },
+      "status" : "passed",
+      "flaky" : false,
+      "type" : "TestCaseNode"
+    } ]
+  }, {
+    "uid" : "e7e8d6e6ee0be04c",
+    "name" : "org.auto.tests.RemoveNoteTest",
+    "time" : {
+      "minDuration" : 49021,
+      "maxDuration" : 49021,
+      "sumDuration" : 49021,
+      "start" : 1559007860223,
+      "stop" : 1559007909244,
+      "duration" : 49021
+    },
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "type" : "TestGroupNode",
+    "children" : [ {
+      "uid" : "6dae90ec7be1640f",
+      "name" : "addAndRemoveNote",
+      "time" : {
+        "start" : 1559007860223,
+        "stop" : 1559007909244,
+        "duration" : 49021
+      },
+      "status" : "passed",
+      "flaky" : false,
+      "type" : "TestCaseNode"
+    } ]
+  } ]
+}

@@ -1,0 +1,127 @@
+{
+  "uid" : "6dae90ec7be1640f",
+  "name" : "addAndRemoveNote",
+  "historyId" : "ef78bf0a165e6d7967e4347ea64cb56e",
+  "time" : {
+    "start" : 1559007860223,
+    "stop" : 1559007909244,
+    "duration" : 49021
+  },
+  "status" : "passed",
+  "description" : "Adding a basic ToDo note, check if the note was added, remove the note and check if it was removed",
+  "descriptionHtml" : "<p>Adding a basic ToDo note, check if the note was added, remove the note and check if it was removed</p>",
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Go to screen Add ToDo Note",
+      "time" : {
+        "start" : 1559007865049,
+        "stop" : 1559007868069,
+        "duration" : 3020
+      },
+      "status" : "passed",
+      "hasContent" : true,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "61b8a5c6148443d2",
+        "name" : "Screenshot evidence",
+        "source" : "61b8a5c6148443d2.png",
+        "type" : "image/jpg",
+        "size" : 50784
+      } ],
+      "parameters" : [ ]
+    }, {
+      "name" : "Add Simple ToDo Note with Title \"Old note-remove\" and reminder set to \"true\"",
+      "time" : {
+        "start" : 1559007868069,
+        "stop" : 1559007894110,
+        "duration" : 26041
+      },
+      "status" : "passed",
+      "hasContent" : true,
+      "attachmentsCount" : 2,
+      "stepsCount" : 0,
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "4246cb5694ffa0a5",
+        "name" : "Screenshot evidence",
+        "source" : "4246cb5694ffa0a5.png",
+        "type" : "image/jpg",
+        "size" : 115350
+      }, {
+        "uid" : "70dd7d4378988f24",
+        "name" : "Screenshot evidence",
+        "source" : "70dd7d4378988f24.png",
+        "type" : "image/jpg",
+        "size" : 95083
+      } ],
+      "parameters" : [ {
+        "name" : "nameToDo",
+        "value" : "Old note-remove"
+      }, {
+        "name" : "switchReminder",
+        "value" : "true"
+      } ]
+    }, {
+      "name" : "Get the element to remove \"Old note-remove\"",
+      "time" : {
+        "start" : 1559007894111,
+        "stop" : 1559007908977,
+        "duration" : 14866
+      },
+      "status" : "passed",
+      "hasContent" : true,
+      "attachmentsCount" : 3,
+      "stepsCount" : 0,
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "9e5391e117e7f976",
+        "name" : "Screenshot evidence",
+        "source" : "9e5391e117e7f976.png",
+        "type" : "image/jpg",
+        "size" : 71083
+      }, {
+        "uid" : "9f52359fa72a0953",
+        "name" : "Screenshot evidence",
+        "source" : "9f52359fa72a0953.png",
+        "type" : "image/jpg",
+        "size" : 49674
+      }, {
+        "uid" : "18ea92ba47bfefcd",
+        "name" : "Screenshot evidence",
+        "source" : "18ea92ba47bfefcd.png",
+        "type" : "image/jpg",
+        "size" : 58910
+      } ],
+      "parameters" : [ {
+        "name" : "nameToDo",
+        "value" : "Old note-remove"
+      }, {
+        "name" : "dateTime",
+        "value" : "true"
+      } ]
+    } ],
+    "attachments" : [ ],
+    "hasContent" : true,
+    "attachmentsCount" : 6,
+    "stepsCount" : 3
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "org.auto.tests.RemoveNoteTest"
+  }, {
+    "name" : "package",
+    "value" : "org.auto.tests.RemoveNoteTest"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "categories" : [ ]
+  }
+}
