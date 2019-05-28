@@ -28,7 +28,6 @@ public class Configurations {
      * @return AndroidDriver
      */
     public AndroidDriver getDriver() {
-
         try{
             desiredCapabilities = new DesiredCapabilities();
             desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,MobilePlatform.ANDROID);
@@ -42,10 +41,6 @@ public class Configurations {
             desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, "true");
 
             driver = new AndroidDriver(new URL(urlAppium), desiredCapabilities);
-
-            //driver.launchApp();
-            //driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
-            //driver.resetApp();
 
         }catch (MalformedURLException ex){
             return null;

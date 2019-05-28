@@ -1,0 +1,6 @@
+-------------------------------------------------------------------------------
+Test set: AddMinimalToDoTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 94.445 sec - in AddMinimalToDoTest
+addToDoNoteWithDefaultReminder  Time elapsed: 57.677 sec
+addSimpleToDoNote  Time elapsed: 36.476 sec

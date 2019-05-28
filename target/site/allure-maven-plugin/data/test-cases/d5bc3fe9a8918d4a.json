@@ -1,0 +1,115 @@
+{
+  "uid" : "d5bc3fe9a8918d4a",
+  "name" : "addSimpleToDoNote",
+  "historyId" : "256c016c5069c3b0f9004c27cef49048",
+  "time" : {
+    "start" : 1559007823747,
+    "stop" : 1559007860202,
+    "duration" : 36455
+  },
+  "status" : "passed",
+  "description" : "Adding a basic ToDo Note without reminder",
+  "descriptionHtml" : "<p>Adding a basic ToDo Note without reminder</p>",
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Go to screen Add ToDo Note",
+      "time" : {
+        "start" : 1559007827503,
+        "stop" : 1559007830309,
+        "duration" : 2806
+      },
+      "status" : "passed",
+      "hasContent" : true,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "63384090ca418e23",
+        "name" : "Screenshot evidence",
+        "source" : "63384090ca418e23.png",
+        "type" : "image/jpg",
+        "size" : 51413
+      } ],
+      "parameters" : [ ]
+    }, {
+      "name" : "Add Simple ToDo Note with Title \"Basic Note\" and reminder set to \"false\"",
+      "time" : {
+        "start" : 1559007830309,
+        "stop" : 1559007855961,
+        "duration" : 25652
+      },
+      "status" : "passed",
+      "hasContent" : true,
+      "attachmentsCount" : 2,
+      "stepsCount" : 0,
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "3d82fb8c2c0e9f4e",
+        "name" : "Screenshot evidence",
+        "source" : "3d82fb8c2c0e9f4e.png",
+        "type" : "image/jpg",
+        "size" : 116070
+      }, {
+        "uid" : "c3263c491fbfe809",
+        "name" : "Screenshot evidence",
+        "source" : "c3263c491fbfe809.png",
+        "type" : "image/jpg",
+        "size" : 61182
+      } ],
+      "parameters" : [ {
+        "name" : "nameToDo",
+        "value" : "Basic Note"
+      }, {
+        "name" : "switchReminder",
+        "value" : "false"
+      } ]
+    }, {
+      "name" : "Check if the item was added",
+      "time" : {
+        "start" : 1559007855962,
+        "stop" : 1559007859877,
+        "duration" : 3915
+      },
+      "status" : "passed",
+      "hasContent" : true,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "906ccaa8e524bdce",
+        "name" : "Screenshot evidence",
+        "source" : "906ccaa8e524bdce.png",
+        "type" : "image/jpg",
+        "size" : 60177
+      } ],
+      "parameters" : [ {
+        "name" : "nameToDo",
+        "value" : "Basic Note"
+      }, {
+        "name" : "dateTime",
+        "value" : "false"
+      } ]
+    } ],
+    "attachments" : [ ],
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "stepsCount" : 3
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "org.auto.tests.AddMinimalToDoTest"
+  }, {
+    "name" : "package",
+    "value" : "org.auto.tests.AddMinimalToDoTest"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "categories" : [ ]
+  }
+}

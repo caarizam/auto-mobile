@@ -1,0 +1,115 @@
+{
+  "uid" : "ad5d3c110d198182",
+  "name" : "addToDoNoteWithDefaultReminder",
+  "historyId" : "1125f37947125b83e86a0470760d4e41",
+  "time" : {
+    "start" : 1559007766064,
+    "stop" : 1559007822753,
+    "duration" : 56689
+  },
+  "status" : "passed",
+  "description" : "Adding a basic ToDo Note with default Date and Time reminder",
+  "descriptionHtml" : "<p>Adding a basic ToDo Note with default Date and Time reminder</p>",
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Go to screen Add ToDo Note",
+      "time" : {
+        "start" : 1559007786924,
+        "stop" : 1559007790303,
+        "duration" : 3379
+      },
+      "status" : "passed",
+      "hasContent" : true,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "f15208ae2e4a21dd",
+        "name" : "Screenshot evidence",
+        "source" : "f15208ae2e4a21dd.png",
+        "type" : "image/jpg",
+        "size" : 51413
+      } ],
+      "parameters" : [ ]
+    }, {
+      "name" : "Add Simple ToDo Note with Title \"Meeting on Monday with Kate\" and reminder set to \"true\"",
+      "time" : {
+        "start" : 1559007790306,
+        "stop" : 1559007818580,
+        "duration" : 28274
+      },
+      "status" : "passed",
+      "hasContent" : true,
+      "attachmentsCount" : 2,
+      "stepsCount" : 0,
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "736d9c653e198a67",
+        "name" : "Screenshot evidence",
+        "source" : "736d9c653e198a67.png",
+        "type" : "image/jpg",
+        "size" : 113550
+      }, {
+        "uid" : "1ad74c527126eb65",
+        "name" : "Screenshot evidence",
+        "source" : "1ad74c527126eb65.png",
+        "type" : "image/jpg",
+        "size" : 102059
+      } ],
+      "parameters" : [ {
+        "name" : "nameToDo",
+        "value" : "Meeting on Monday with Kate"
+      }, {
+        "name" : "switchReminder",
+        "value" : "true"
+      } ]
+    }, {
+      "name" : "Check if the item was added",
+      "time" : {
+        "start" : 1559007818581,
+        "stop" : 1559007822444,
+        "duration" : 3863
+      },
+      "status" : "passed",
+      "hasContent" : true,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "18accb16cab84926",
+        "name" : "Screenshot evidence",
+        "source" : "18accb16cab84926.png",
+        "type" : "image/jpg",
+        "size" : 77990
+      } ],
+      "parameters" : [ {
+        "name" : "nameToDo",
+        "value" : "Meeting on Monday with Kate"
+      }, {
+        "name" : "dateTime",
+        "value" : "true"
+      } ]
+    } ],
+    "attachments" : [ ],
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "stepsCount" : 3
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "org.auto.tests.AddMinimalToDoTest"
+  }, {
+    "name" : "package",
+    "value" : "org.auto.tests.AddMinimalToDoTest"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "categories" : [ ]
+  }
+}

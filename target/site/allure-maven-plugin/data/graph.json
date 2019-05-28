@@ -1,0 +1,31 @@
+[ {
+  "uid" : "d5bc3fe9a8918d4a",
+  "name" : "addSimpleToDoNote",
+  "time" : {
+    "start" : 1559007823747,
+    "stop" : 1559007860202,
+    "duration" : 36455
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ad5d3c110d198182",
+  "name" : "addToDoNoteWithDefaultReminder",
+  "time" : {
+    "start" : 1559007766064,
+    "stop" : 1559007822753,
+    "duration" : 56689
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6dae90ec7be1640f",
+  "name" : "addAndRemoveNote",
+  "time" : {
+    "start" : 1559007860223,
+    "stop" : 1559007909244,
+    "duration" : 49021
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
