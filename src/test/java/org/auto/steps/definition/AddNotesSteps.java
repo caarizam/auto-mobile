@@ -1,9 +1,7 @@
 package org.auto.steps.definition;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -26,7 +24,7 @@ public class AddNotesSteps {
 
     @Before
     public void initValues(){
-        Configurations config = Common.getInstance().getConfigurations("emulator-554", "http://127.0.0.1:4723/wd/hub");
+        Configurations config = Common.getInstance().getConfigurations("RF8R1193W8V", "http://127.0.0.1:4723/wd/hub");
         this.driver = Common.getInstance().getDriver();
         homePage = new HomePage(this.driver);
         addPage = new AddToDoPage(this.driver);
