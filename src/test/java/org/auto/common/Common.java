@@ -1,8 +1,7 @@
 package org.auto.common;
 
-import cucumber.api.Scenario;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
+import io.cucumber.java.Scenario;
 import org.auto.setup.Configurations;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -13,7 +12,7 @@ public class Common {
 
     private Common(){}
 
-    private AndroidDriver<AndroidElement> driver = null;
+    private AndroidDriver driver = null;
     private Configurations configurations = null;
     private Scenario tmpScenario;
 
@@ -32,7 +31,7 @@ public class Common {
     public void takeScreenShot(){
         try{
             byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-            this.tmpScenario.embed(screenshot, "image/png");
+            this.tmpScenario.attach(screenshot, "image/png", "screenshot");
 
         }catch (Exception ex){
 
@@ -45,7 +44,7 @@ public class Common {
      * @return
      */
     public void saveTextLog(String message){
-        this.tmpScenario.write(message);
+        this.tmpScenario.log(message);
     }
 
     /**
@@ -94,13 +93,13 @@ public class Common {
         }
     }
 
-    public AndroidDriver<AndroidElement> getDriver() {
+    public AndroidDriver getDriver() {
 
         return driver;
 
     }
 
-    public void setDriver(AndroidDriver<AndroidElement> driver) {
+    public void setDriver(AndroidDriver driver) {
 
         if(this.driver == null){
             this.driver = driver;

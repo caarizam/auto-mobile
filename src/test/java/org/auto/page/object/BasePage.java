@@ -1,24 +1,27 @@
 package org.auto.page.object;
 
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import io.appium.java_client.touch.LongPressOptions;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Pause;
+import org.openqa.selenium.interactions.PointerInput;
+import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static io.appium.java_client.touch.offset.PointOption.point;
+import java.time.Duration;
+import java.util.List;
+
 import static java.time.Duration.ofMillis;
 
 public class BasePage {
 
     protected WebDriverWait wait;
-    protected AndroidDriver<AndroidElement> driver;
+    protected AndroidDriver driver;
 
-    public BasePage(AndroidDriver<AndroidElement> driver){
+    public BasePage(AndroidDriver driver){
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
         this.driver = driver;
     }
@@ -30,18 +33,18 @@ public class BasePage {
     /**
      * This method allow to check if an element is visible or not, also
      * create an assert with a failure
-     * @param androidElement AndroidElement to check if is visible or not
+     * @param androidElement WebElement to check if is visible or not
      * @param timeOut Int Explicit time to wait the element
      * @param message String message to add in case of failure
      * @param expected boolean True of False
      * @return
      */
-    public boolean isElementVisible(AndroidElement androidElement, int timeOut, String message, boolean expected){
+    public boolean isElementVisible(WebElement androidElement, int timeOut, String message, boolean expected){
 
         boolean isVisible = false;
         try{
 
-            wait = new WebDriverWait(this.driver, timeOut);
+            wait = new WebDriverWait(this.driver, Duration.ofSeconds(timeOut));
             wait.until(ExpectedConditions.visibilityOf(androidElement));
 
             isVisible = true;
@@ -50,17 +53,17 @@ public class BasePage {
             isVisible = false;
         }
 
-        Assert.assertEquals(message, isVisible, expected);
+        Assertions.assertEquals(expected, isVisible, message);
 
         return isVisible;
     }
 
     /**
      * This method perform a horizontal swipe to delete a note
-     * @param androidElement AndroidElement that we want to delete
+     * @param androidElement WebElement that we want to delete
      * @return boolean True on success of False on failure
      */
-    public boolean horizontalSwipeRemove(AndroidElement androidElement){
+    public boolean horizontalSwipeRemove(WebElement androidElement){
 
         try{
             int x1Position = androidElement.getLocation().getX();
@@ -74,8 +77,14 @@ public class BasePage {
 
             x1Position = (int)(elementWidth * 0.2);
 
-            TouchAction touch = new TouchAction(this.driver);
-            touch.longPress(LongPressOptions.longPressOptions().withPosition(point(x1Position, y2Position)).withDuration(ofMillis(1300))).moveTo(point(x2Position, y2Position)).release().perform();
+            PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+            Sequence swipe = new Sequence(finger, 1)
+                    .addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), x1Position, y2Position))
+                    .addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()))
+                    .addAction(new Pause(finger, ofMillis(1300)))
+                    .addAction(finger.createPointerMove(ofMillis(500), PointerInput.Origin.viewport(), x2Position, y2Position))
+                    .addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+            this.driver.perform(List.of(swipe));
 
             return true;
 

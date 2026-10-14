@@ -9,8 +9,5 @@
         <module name="auto-mobile" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="auto-mobile" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

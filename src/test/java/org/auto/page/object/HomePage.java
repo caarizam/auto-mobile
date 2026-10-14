@@ -1,9 +1,10 @@
 package org.auto.page.object;
 
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
+import org.openqa.selenium.WebElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.auto.common.Common;
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 
 import java.util.List;
@@ -11,33 +12,66 @@ import java.util.List;
 
 public class HomePage extends BasePage {
 
-    public HomePage(AndroidDriver<AndroidElement> driver){
+    public HomePage(AndroidDriver driver){
         super(driver);
     }
 
+    @AndroidFindBy( xpath = "//android.widget.EditText[@resource-id='username']")
+    private WebElement usernameTextField;
+
+    @AndroidFindBy( xpath = "//android.widget.EditText[@resource-id='password']")
+    private WebElement passwordTextField;
+
+    @AndroidFindBy( xpath = "//android.view.View[@resource-id='login_button']/android.widget.Button")
+    private WebElement loginButton;
+
+    @AndroidFindBy( xpath = "//android.view.View[@resource-id='logout_button']")
+    private WebElement logoutButton;
+
     @AndroidFindBy( xpath = "//android.widget.TextView[@text='Minimal']")
-    private AndroidElement appTitleLabel;
+    private WebElement appTitleLabel;
 
     @AndroidFindBy( uiAutomator = "new UiSelector().index(0)")
-    private AndroidElement menuOptions;
+    private WebElement menuOptions;
 
     @AndroidFindBy( xpath = "//android.widget.TextView[@text='Settings']")
-    private AndroidElement settingOption;
+    private WebElement settingOption;
 
     @AndroidFindBy( xpath = "//android.widget.TextView[@text='About']")
-    private AndroidElement aboutOption;
+    private WebElement aboutOption;
 
     @AndroidFindBy( xpath = "//android.widget.TextView[@text='Preference']")
-    private AndroidElement addToDoButton;
+    private WebElement addToDoButton;
 
     @AndroidFindBy( xpath = "//android.widget.TextView[@text='You don't have any todos']")
-    private AndroidElement generalEmptyLabel;
+    private WebElement generalEmptyLabel;
 
     @AndroidFindBy( id = "listItemLinearLayout")
-    private List<AndroidElement> listElementsLabel;
+    private List<WebElement> listElementsLabel;
 
     @AndroidFindBy( id = "addToDoItemFAB")
-    private AndroidElement addButton;
+    private WebElement addButton;
+
+    public void loginAction(String username, String password){
+
+        if(isElementVisible(this.loginButton, LONG_TIME_WAIT, "Login button is no visible", true)){
+        //this.usernameTextField.click();
+            this.usernameTextField.sendKeys(username);
+            this.passwordTextField.sendKeys(password);
+            this.loginButton.click();
+        }
+
+    }
+
+    public void logoutAction() {
+        try {
+            if(isElementVisible(this.logoutButton, LONG_TIME_WAIT, "Logout button is no visible", true)){
+                this.logoutButton.click();
+            }
+        } catch (Exception e) {
+            System.out.println("Exception on logoutAction: " + e.getMessage());
+        }
+    }
 
     /**
      * This method performs a click on the add button
@@ -59,7 +93,7 @@ public class HomePage extends BasePage {
      */
     public boolean getListToDos(String nameToDo, boolean dateTime){
 
-        AndroidElement tmpItem;
+        WebElement tmpItem;
         String nameText, dateText;
         int size, i;
         boolean foundElement = false;
@@ -104,11 +138,11 @@ public class HomePage extends BasePage {
      * compare them with the parameters given
      * @param nameToDo String name of the note
      * @param dateTime boolean to check if the note must have a time or not
-     * @return AndroidElement the element found out or null if the element was not found
+     * @return WebElement the element found out or null if the element was not found
      */
-    public AndroidElement getListToDosElement(String nameToDo, boolean dateTime){
+    public WebElement getListToDosElement(String nameToDo, boolean dateTime){
 
-        AndroidElement tmpItem;
+        WebElement tmpItem;
         String nameText, dateText;
         int size, i;
 
@@ -145,11 +179,11 @@ public class HomePage extends BasePage {
 
     }
 
-    public AndroidElement getItemFromList(String identifier, AndroidElement itemElement){
+    public WebElement getItemFromList(String identifier, WebElement itemElement){
 
         try{
 
-            AndroidElement element = (AndroidElement) itemElement.findElementById(identifier);
+            WebElement element = itemElement.findElement(By.id(identifier));
             return element;
 
         }catch (NoSuchElementException ex){
@@ -162,10 +196,10 @@ public class HomePage extends BasePage {
 
     /**
      * This method deletes and element given through a swipe method
-     * @param element AndroidElement that we want to delete
+     * @param element WebElement that we want to delete
      * @return True on success and False on failure
      */
-    public boolean removeElement(AndroidElement element){
+    public boolean removeElement(WebElement element){
 
         boolean result = horizontalSwipeRemove(element);
         Common.getInstance().takeScreenShot();

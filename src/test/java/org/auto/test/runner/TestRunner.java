@@ -1,16 +1,20 @@
 package org.auto.test.runner;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
-import org.junit.runner.RunWith;
+import org.junit.platform.suite.api.ConfigurationParameter;
+import org.junit.platform.suite.api.IncludeEngines;
+import org.junit.platform.suite.api.SelectPackages;
+import org.junit.platform.suite.api.Suite;
 
-@RunWith(Cucumber.class)
-@CucumberOptions(
-        plugin = { "pretty", "json:target/cucumber-json-report", "html:target/cucumber-html" },
-        features = {"src/test/resources/features/" },
-        glue = { "classpath:org.auto.steps.definition" },
-        tags = { "@regression" }
-        )
+import static io.cucumber.junit.platform.engine.Constants.FILTER_TAGS_PROPERTY_NAME;
+import static io.cucumber.junit.platform.engine.Constants.GLUE_PROPERTY_NAME;
+import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
+
+@Suite
+@IncludeEngines("cucumber")
+@SelectPackages("features")
+@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty, json:target/cucumber-json-report, html:target/cucumber-html")
+@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "org.auto.steps.definition")
+@ConfigurationParameter(key = FILTER_TAGS_PROPERTY_NAME, value = "@regression")
 public class TestRunner {
 
 }

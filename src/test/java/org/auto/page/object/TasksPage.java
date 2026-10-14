@@ -1,56 +1,56 @@
 package org.auto.page.object;
 
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
+import org.openqa.selenium.WebElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.auto.common.Common;
 
-public class AddToDoPage extends BasePage {
+public class TasksPage extends BasePage {
 
-    public AddToDoPage(AndroidDriver<AndroidElement> driver){
+    public TasksPage(AndroidDriver driver){
         super(driver);
     }
 
     @AndroidFindBy( uiAutomator = "new UiSelector().description(\"Navigate up\")")
-    private AndroidElement closeButton;
+    private WebElement closeButton;
 
     @AndroidFindBy( className = "bi")
-    private AndroidElement titleLabel;
+    private WebElement titleLabel;
 
     @AndroidFindBy( id = "userToDoEditText")
-    private AndroidElement editTitle;
+    private WebElement editTitle;
 
     @AndroidFindBy( id = "makeToDoFloatingActionButton")
-    private AndroidElement createToDoButton;
+    private WebElement createToDoButton;
 
     @AndroidFindBy( id = "toDoHasDateSwitchCompat")
-    private AndroidElement remindMeSwitchButton;
+    private WebElement remindMeSwitchButton;
 
     @AndroidFindBy( id = "userToDoRemindMeTextView")
-    private AndroidElement remindMeLabel;
+    private WebElement remindMeLabel;
 
     @AndroidFindBy( id = "newTodoDateEditText")
-    private AndroidElement dateCalendarEdit;
+    private WebElement dateCalendarEdit;
     //ok
     @AndroidFindBy( xpath = "//android.widget.Button[@text='CANCEL']")
-    private AndroidElement dateCalendarCancel;
+    private WebElement dateCalendarCancel;
     //cancel
     @AndroidFindBy( xpath = "//android.widget.Button[@text='OK']")
-    private AndroidElement dateCalendaOk;
+    private WebElement dateCalendaOk;
 
 
     @AndroidFindBy( id = "newTodoTimeEditText")
-    private AndroidElement dateTimeEdit;
+    private WebElement dateTimeEdit;
     //ok
     @AndroidFindBy( xpath = "//android.widget.Button[@text='CANCEL']")
-    private AndroidElement dateTimeEditCancel;
+    private WebElement dateTimeEditCancel;
     //cancel
     @AndroidFindBy( xpath = "//android.widget.Button[@text='OK']")
-    private AndroidElement dateTimeEditOk;
+    private WebElement dateTimeEditOk;
 
 
     @AndroidFindBy( id = "newToDoDateTimeReminderTextView")
-    private AndroidElement messagesConfirmationLabel;
+    private WebElement messagesConfirmationLabel;
 
     /**
      * This method add a ToDo note

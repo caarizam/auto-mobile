@@ -1,41 +1,42 @@
 package org.auto.steps.definition;
 
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import io.appium.java_client.android.AndroidDriver;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.auto.common.Common;
-import org.auto.page.object.AddToDoPage;
+import org.auto.page.object.TasksPage;
 import org.auto.page.object.HomePage;
 import org.auto.setup.Configurations;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
-public class AddNotesSteps {
+public class TasksSteps {
 
     AndroidDriver driver;
+    Configurations config;
     HomePage homePage;
-    AddToDoPage addPage;
+    TasksPage addPage;
 
-    public AddNotesSteps(){
+    public TasksSteps(){
 
     }
 
     @Before
     public void initValues(){
-        Configurations config = Common.getInstance().getConfigurations("RF8R1193W8V", "http://127.0.0.1:4723/wd/hub");
+        this.config = Common.getInstance().getConfigurations("emulator-5554", "http://127.0.0.1:4723");
         this.driver = Common.getInstance().getDriver();
         homePage = new HomePage(this.driver);
-        addPage = new AddToDoPage(this.driver);
+        addPage = new TasksPage(this.driver);
     }
 
 
     @Given("^the access to the application$")
     public void theAccessToTheApplication() {
-        this.driver.launchApp();
+        this.config.launchApp();
         Common.getInstance().takeScreenShot();
-
+        homePage.loginAction("test@example.com", "123456789");
     }
 
     @When("^a user add the note with title \"([^\"]*)\" and reminder switch to \"([^\"]*)\"$")
@@ -50,7 +51,7 @@ public class AddNotesSteps {
         boolean expected = Common.getInstance().getExpected(isVisible);
         boolean checkItem = homePage.getListToDos(nameToDo, dateTime);
 
-        Assert.assertEquals("The item with value " + nameToDo + " was not found", checkItem, expected);
+        Assertions.assertEquals(expected, checkItem, "The item with value " + nameToDo + " was not found");
 
     }
 

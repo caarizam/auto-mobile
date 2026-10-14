@@ -1,20 +1,20 @@
 package org.auto.setup;
 
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.remote.MobileCapabilityType;
-import io.appium.java_client.remote.MobilePlatform;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import io.appium.java_client.android.options.UiAutomator2Options;
+import org.openqa.selenium.Platform;
+
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 
 public class Configurations {
 
-    private DesiredCapabilities desiredCapabilities;
     private String deviceName;
     public AndroidDriver driver;
     private String urlAppium;
-    private String appPackage = "com.avjindersinghsekhon.minimaltodo";
-    private String appActivity = "com.example.avjindersinghsekhon.toodle.MainActivity";
+    private String appPackage = "com.monkeybot.towermanage";
+    private String appActivity = "com.monkeybot.towermanage.MainActivity";
 
     public Configurations(String deviceName, String urlAppium){
 
@@ -30,22 +30,18 @@ public class Configurations {
     public AndroidDriver getDriver() {
 
         try{
-            desiredCapabilities = new DesiredCapabilities();
-            desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,MobilePlatform.ANDROID);
-            desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
-            desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "20");
+            UiAutomator2Options options = new UiAutomator2Options()
+                    .setPlatformName(Platform.ANDROID.toString())
+                    .setDeviceName(deviceName)
+                    .setNewCommandTimeout(Duration.ofSeconds(20))
+                    .setAppPackage(this.appPackage)
+                    .setAppActivity(this.appActivity)
+                    .setFullReset(false)
+                    .setNoReset(false);
 
-            desiredCapabilities.setCapability("appPackage", this.appPackage);
-            desiredCapabilities.setCapability("appActivity", this.appActivity);
+            driver = new AndroidDriver(new URL(urlAppium), options);
 
-            desiredCapabilities.setCapability(MobileCapabilityType.FULL_RESET, "false");
-            desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, "true");
-
-            driver = new AndroidDriver(new URL(urlAppium), desiredCapabilities);
-
-            //driver.launchApp();
-            //driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
-            //driver.resetApp();
+            //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
 
         }catch (MalformedURLException ex){
             return null;
@@ -57,7 +53,7 @@ public class Configurations {
 
     public void launchApp(){
 
-        this.driver.launchApp();
+        this.driver.activateApp(this.appPackage);
 
     }
 
@@ -66,7 +62,7 @@ public class Configurations {
     }
 
     public void closeDriver(){
-        this.driver.closeApp();
+        this.driver.terminateApp(this.appPackage);
     }
 
     public void quitDriver(){
